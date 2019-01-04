@@ -6,7 +6,7 @@ const service_account = require('./firestore.json');
 
 admin.initializeApp({
 
-    credential: admin.credential.cert(service_account)
+    credential: admin.credential.cert(process.env.SERVICE || service_account)
 });
   
 const db = admin.firestore();
